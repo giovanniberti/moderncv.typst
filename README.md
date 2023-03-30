@@ -2,6 +2,7 @@
 
 * [How to use](#how-to-use)
 * [Examples](#examples)
+* [How to customize colors](#how-to-customize-colors)
 
 ![Template preview](preview.png)
 
@@ -50,3 +51,11 @@ Most of the times you'll be using `cventry` and `cvcol`, for example:
 ## Examples
 
 See `example.typ` `example.pdf`.
+
+## How to customize colors
+
+Currently the `project` function exposes three different color parameters:
+
+* `main_color`: Used by left-side heading bars (default: `rgb(147, 14, 14)`)
+* `heading_color`: Used in headings text (default: same as `main_color`)
+* `job_color`: Used in the main job occupation text (default: `rgb("#737373")`)

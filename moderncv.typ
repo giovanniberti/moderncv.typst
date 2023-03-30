@@ -22,6 +22,10 @@
 #let left_column_size = 25%
 #let grid_column_gutter = 8pt
 
+#let main_color = rgb(147, 14, 14)
+#let heading_color = main_color
+#let job_color = rgb("#737373")
+
 #let project(
   title: "",
   author: [],
@@ -30,16 +34,15 @@
   github: "",
   left_column_size: left_column_size,
   grid_column_gutter: grid_column_gutter,
+  main_color: main_color,
+  heading_color: heading_color,
+  job_color: job_color,
   body
 ) = {
   set document(author: author, title: title)
   set page(numbering: none)
   set text(font: ("Latin Modern Sans", "Inria Sans"), lang: "en", fallback: true)
   show math.equation: set text(weight: 400)
-
-  let main_color = rgb(147, 14, 14)
-  let text_color = main_color
-  let medium_gray = rgb("#737373")
 
   /*
    * How headings are used:
@@ -54,7 +57,7 @@
       inset: (right: grid_column_gutter, bottom: 0.1em),
       rect(fill: main_color, width: left_column_size, height: 0.25em)
     )
-    #text(element.body, fill: text_color, weight: 400)
+    #text(element.body, fill: heading_color, weight: 400)
   ]
 
   show heading.where(level: 2): element => [
@@ -65,11 +68,11 @@
     #text(element.body, size: 1em, weight: 400, style: "italic")
   ]
 
-  show heading.where(level: 4): element => block[#text(element.body, size: 1em, weight: 400, fill: text_color)]
+  show heading.where(level: 4): element => block[#text(element.body, size: 1em, weight: 400, fill: heading_color)]
 
-  set list(marker: box(circle(radius: 0.2em, stroke: text_color), inset: (top: 0.15em)))
+  set list(marker: box(circle(radius: 0.2em, stroke: heading_color), inset: (top: 0.15em)))
 
-  set enum(numbering: (n) => text(fill: text_color, [#n.]))
+  set enum(numbering: (n) => text(fill: heading_color, [#n.]))
 
   grid(
     columns: (1fr, 1fr),
@@ -80,7 +83,7 @@
       #v(-1.2em)
     
       // Title row.
-      #block(text(weight: 400, 1.5em, title, style: "italic", fill: medium_gray))
+      #block(text(weight: 400, 1.5em, title, style: "italic", fill: job_color))
     ],
     align(right + top)[
       // Contact information
