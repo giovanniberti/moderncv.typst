@@ -3,6 +3,8 @@
 * [How to use](#how-to-use)
 * [Examples](#examples)
 
+![Template preview](preview.png)
+
 This is a [typst](https://github.com/typst/typst) template inspired by LaTeX's [moderncv](https://github.com/moderncv/moderncv).
 
 Currently it features a very basic structure, but the main components are defined to allow for sufficient flexibility such to provide all the customizations that the original package has.
