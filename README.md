@@ -31,6 +31,16 @@ This template provides a few customizations that should be considered when writi
 Most of the times you'll be using `cventry` and `cvcol`, for example:
 
 ```typst
+#import "@preview/moderncv:0.1.0": project, cvcol, cventry
+
+#show: project.with(
+  title: "Master Frobnicator",
+  author: "John Doe",
+  github: "johndoe1337",
+  phone: "+01 234 56 7890",
+  email: "john@example.com"
+)
+
 = Work Experience
 
 #cventry(
